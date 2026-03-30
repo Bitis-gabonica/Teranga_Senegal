@@ -306,7 +306,7 @@ body {
     width: 60vh; height: 60vh;
     transform: translate(-50%, -50%);
     z-index: 1;
-    color: rgba(0,0,0,0.15); /* Make geometric background noticeably visible yet minimal */
+    color: rgba(0,0,0,0.04); /* Subtly pure and minimal */
     pointer-events: none;
 }
 .geom { width: 100%; height: 100%; }
@@ -618,4 +618,40 @@ body {
     .cyber-lower-grid { flex-direction: column; display: flex; }
     .cyber-giant-text { flex-direction: column; gap: 0; }
     .cyber-col-right { min-height: 200px; }
+}
+
+@media (max-width: 768px) {
+    /* Timeline visibility minimalised */
+    .timeline-container { display: none; }
+    .bottom-bar { display: none; } 
+    
+    /* Overall spacing and layout fixes */
+    .content {
+        flex-direction: column;
+        padding-top: 10vh;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .content-left {
+        border-right: none;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .content-right {
+        width: 100%;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    .desc-block {
+        padding-left: 0;
+    }
+    
+    /* Typography scaled for mobile */
+    .title { font-size: clamp(2.5rem, 10vw, 4rem); white-space: normal; line-height: 1; }
+    .cyber-giant-text { font-size: clamp(3rem, 15vw, 6rem); padding: 5vw; }
+    
+    /* Make flag star responsive to both viewports */
+    .main-flag-star { width: 50vmin; height: 50vmin; }
 }
