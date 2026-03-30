@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire du Sénégal - Interactive</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+
+<body>
+
+    <!-- FIXED HEADER -->
+    <header class="card-header">
+        <div class="brand">
+            <span class="prompt-arrow">&gt;_</span>
+            <span id="header-title">SÉNÉGAL</span>
+        </div>
+    </header>
+
+    <!-- FIXED TIMELINE (FRISE) -->
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <!-- Dots for timeline -->
+        <div class="timeline-dots">
+            <div class="dot active" data-index="0">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="dot" data-index="1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+            </div>
+            <div class="dot" data-index="2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                </svg>
+            </div>
+            <div class="dot" data-index="3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 2v20" />
+                    <path d="M5 12c0 3.866 3.134 7 7 7s7-3.134 7-7" />
+                    <path d="M9 22h6" />
+                    <circle cx="12" cy="5" r="3" />
+                </svg>
+            </div>
+            <div class="dot" data-index="4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                    <line x1="4" y1="22" x2="4" y2="15"></line>
+                </svg>
+            </div>
+            <div class="dot" data-index="5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                    <path d="M9 22v-4h6v4"></path>
+                    <path d="M8 6h.01"></path>
+                    <path d="M16 6h.01"></path>
+                    <path d="M12 6h.01"></path>
+                    <path d="M12 10h.01"></path>
+                    <path d="M12 14h.01"></path>
+                    <path d="M16 10h.01"></path>
+                    <path d="M16 14h.01"></path>
+                    <path d="M8 10h.01"></path>
+                    <path d="M8 14h.01"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SCROLL CONTAINER -->
+    <div class="scroll-container">
+
+        <!-- SECTION 0: INTRO / FLAG -->
+        <section class="panel panel-0 flag-panel">
+            <div class="flag-area flag-green"></div>
+            <div class="flag-area flag-yellow">
+                <svg class="main-flag-star" viewBox="0 0 100 100" fill="#00853f">
+                    <polygon points="50,5 64,40 100,40 71,61 82,95 50,74 18,95 29,61 0,40 36,40" />
+                </svg>
+            </div>
+            <div class="flag-area flag-red"></div>
+
+            <div class="flag-overlay-content">
+                <p class="flag-subtitle anim-text">EXPLOREZ L'HISTOIRE</p>
+                <div class="scroll-indicator-line"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: INTRO CYBER -->
+        <section class="panel panel-1 cyber-panel">
+            <div class="wrapper">
+                <div class="main-card intro-card cyber-card">
+                    <div class="bg-shape">
+                        <svg viewBox="0 0 100 100" class="geom geom-spin-slow">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="1" />
+                            <line x1="50" y1="5" x2="50" y2="95" stroke="currentColor" stroke-width="1" />
+                            <line x1="5" y1="50" x2="95" y2="50" stroke="currentColor" stroke-width="1" />
+                        </svg>
+                    </div>
+
+                    <div class="cyber-header">
+                        <div class="cyber-brand">TERANGA<span>SÉNÉGAL</span></div>
+                        <div class="cyber-coords">14.6928° N / 17.4467° W</div>
+                        <div class="cyber-region">AFRIQUE</div>
+                    </div>
+
+                    <div class="cyber-body">
+                        <div class="cyber-giant-text">
+                            <span class="word-solid anim-text">TERANGA</span>
+                            <span class="word-outline anim-text">SÉNÉGAL</span>
+                        </div>
+
+                        <div class="cyber-lower-grid">
+                            <div class="cyber-col-left">
+                                <div class="cyber-stacked-words">
+                                    <div class="anim-text">FIERTÉ.</div>
+                                    <div class="anim-text">HÉRITAGE.</div>
+                                    <div class="anim-text">RÉSILIENCE.</div>
+                                </div>
+                                <div class="cyber-button anim-text">
+                                    <span class="btn-corner tl"></span>
+                                    <span class="btn-corner tr"></span>
+                                    <span class="btn-corner bl"></span>
+                                    <span class="btn-corner br"></span>
+                                    >_EXPLORATION
+                                </div>
+                            </div>
+
+                            <div class="cyber-col-center">
+                                <p class="cyber-desc anim-text">
+                                    Des royaumes millénaires aux métropoles futuristes, le Sénégal porte l'héritage
+                                    brillant d'une nation puissante.
+                                </p>
+                                <pre class="pure-ascii"></pre>
+                            </div>
+
+                            <div class="cyber-col-right">
+                                <div class="cyber-timeline-bar">
+                                    <span class="tl-tick tick-s"></span><span class="tl-tick tick-m"></span><span
+                                        class="tl-tick"></span><span class="tl-tick tick-m"></span><span
+                                        class="tl-tick tick-s"></span>
+                                    <div class="tl-thumb">III</div>
+                                    <span class="tl-tick tick-s"></span><span class="tl-tick tick-m"></span><span
+                                        class="tl-tick"></span><span class="tl-tick tick-m"></span><span
+                                        class="tl-tick tick-s"></span>
+                                </div>
+                                <div class="cyber-version">VERSION: 2.0.0-RC.1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: EMPIRES -->
+        <section class="panel panel-2">
+            <div class="wrapper">
+                <div class="main-card empires-card">
+                    <div class="bg-shape">
+                        <svg viewBox="0 0 100 100" class="geom geom-float">
+                            <polygon points="50,15 85,85 15,85" fill="none" stroke="currentColor" stroke-width="1" />
+                            <circle cx="50" cy="60" r="10" fill="none" stroke="currentColor" stroke-width="1" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <div class="content-left">
+                            <h1 class="title">ROYAUMES &<br>EMPIRES</h1>
+                            <div class="date-badge anim-text">Ve - XVe Siècles</div>
+                        </div>
+                        <div class="content-right">
+                            <div class="graphic-container">
+                                <pre class="pure-ascii"></pre>
+                            </div>
+                            <div class="desc-block">
+                                <p class="description anim-text">
+                                    Dès le Ve siècle, le Sénégal voit naître des civilisations puissantes. L'Empire du
+                                    Ghana rayonne par son or et son commerce. Plus tard, les Toucouleurs fondent le
+                                    Tekrour dans le Nord.
+                                </p>
+                                <p class="description anim-text delay-1">
+                                    Au XVe siècle, le prestigieux Empire du Djolof s'affirme, aux côtés des royaumes du
+                                    Sine et du Saloum. Une période marquée par une organisation sociale forte et une
+                                    culture rayonnante.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: COLONISATION -->
+        <section class="panel panel-3">
+            <div class="wrapper">
+                <div class="main-card colonie-card">
+                    <div class="bg-shape">
+                        <svg viewBox="0 0 100 100" class="geom geom-wave">
+                            <path d="M0,30 Q25,10 50,30 T100,30" fill="none" stroke="currentColor" stroke-width="1" />
+                            <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="currentColor" stroke-width="1" />
+                            <path d="M0,70 Q25,50 50,70 T100,70" fill="none" stroke="currentColor" stroke-width="1" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <div class="content-left">
+                            <h1 class="title">GOREÉ &<br>COLONISATION</h1>
+                            <div class="date-badge anim-text">XVe - XIXe Siècles</div>
+                        </div>
+                        <div class="content-right">
+                            <div class="graphic-container">
+                                <pre class="pure-ascii"></pre>
+                            </div>
+                            <div class="desc-block">
+                                <p class="description anim-text">
+                                    En 1444, les navigateurs portugais atteignent la presqu'île du Cap-Vert. C'est le
+                                    début d'une longue et douloureuse ère de commerce avec l'Europe.
+                                </p>
+                                <p class="description anim-text delay-1">
+                                    L'île de Gorée devient l'un des centres tragiques de la traite négrière. Au XIXe
+                                    siècle, sous l'impulsion de Faidherbe, la France consolide son emprise coloniale et
+                                    fonde Dakar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INDEPENDANCE -->
+        <section class="panel panel-4">
+            <div class="wrapper">
+                <div class="main-card indep-card">
+                    <div class="bg-shape">
+                        <svg viewBox="0 0 100 100" class="geom geom-spin">
+                            <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1" />
+                            <line x1="50" y1="0" x2="50" y2="100" stroke="currentColor" stroke-width="1" />
+                            <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" stroke-width="1" />
+                            <line x1="15" y1="15" x2="85" y2="85" stroke="currentColor" stroke-width="1" />
+                            <line x1="85" y1="15" x2="15" y2="85" stroke="currentColor" stroke-width="1" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <div class="content-left">
+                            <h1 class="title">INDéPENDANCE</h1>
+                            <div class="date-badge anim-text">1960</div>
+                        </div>
+                        <div class="content-right">
+                            <div class="graphic-container">
+                                <pre class="pure-ascii"></pre>
+                            </div>
+                            <div class="desc-block">
+                                <p class="description anim-text">
+                                    Le vent de la liberté souffle. Après une brève Fédération du Mali, la République du
+                                    Sénégal naît officiellement le 20 août 1960.
+                                </p>
+                                <p class="description anim-text delay-1">
+                                    Léopold Sédar Senghor, poète et homme d'État, devient le premier Président. Il pose
+                                    les fondements d'une République démocratique, ancrée dans les valeurs de la
+                                    Négritude.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: CONTEMPORAINE -->
+        <section class="panel panel-5">
+            <div class="wrapper">
+                <div class="main-card moderne-card">
+                    <div class="bg-shape">
+                        <svg viewBox="0 0 100 100" class="geom geom-pulse">
+                            <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor"
+                                stroke-width="1" />
+                            <rect x="35" y="35" width="30" height="30" fill="none" stroke="currentColor"
+                                stroke-width="1" />
+                            <rect x="45" y="45" width="10" height="10" fill="none" stroke="currentColor"
+                                stroke-width="1" />
+                            <line x1="20" y1="20" x2="80" y2="80" stroke="currentColor" stroke-width="1" />
+                            <line x1="80" y1="20" x2="20" y2="80" stroke="currentColor" stroke-width="1" />
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <div class="content-left">
+                            <h1 class="title">ÉPOQUE<br>MODERNE</h1>
+                            <div class="date-badge anim-text">Aujourd'hui</div>
+                        </div>
+                        <div class="content-right">
+                            <div class="graphic-container">
+                                <pre class="pure-ascii"></pre>
+                            </div>
+                            <div class="desc-block">
+                                <p class="description anim-text">
+                                    Des transitions pacifiques (Diouf, Wade, Sall) à l'émergence d'infrastructures
+                                    futuristes comme Diamniadio.
+                                </p>
+                                <p class="description anim-text delay-1">
+                                    Une nation rayonnante, portée par sa résilience, la culture de la Teranga,
+                                    l'effervescence de sa jeunesse, et des succès mondiaux, des arts jusqu'aux Lions de
+                                    la Teranga.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FIXED FOOTER -->
+    <footer class="bottom-bar">
+        <div class="stats stats-left">
+            <span class="stat-item">
+                <span class="stat-label">EXPLORATION</span>
+                <span id="progress-text">0%</span>
+            </span>
+        </div>
+        <div class="stats stats-right">
+            <span class="stat-item dakar-timer">00:00.000</span>
+            <span class="stat-item">
+                <span class="stat-label">DAKAR TIME</span>
+                <span class="dakar-time">00:00 DKR</span>
+            </span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
